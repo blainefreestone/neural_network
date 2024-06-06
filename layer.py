@@ -18,5 +18,13 @@ class Layer:
         self.weights = np.random.randn(num_inputs, num_neurons) # start layer with random weights
         self.biases = np.zeros((1, num_neurons))    # start layer with zero biases
 
-    def forward():
-        pass
+    def forward(self, inputs: np.ndarray) -> np.ndarray:
+        """
+        Forward pass of the layer based on weights and biases.
+        
+        Args:
+            inputs: Input data
+        Returns:
+            np.ndarray: Output data
+        """
+        return np.dot(inputs, self.weights) + self.biases
